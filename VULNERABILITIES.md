@@ -162,7 +162,7 @@ curl http://localhost:8080/nonexistent
 **OWASP Category**: A03:2021 – Injection  
 **CWE**: CWE-89 (SQL Injection)  
 **Severity**: Critical  
-**Location**: `auth-service/src/routes/auth.js:64-66`
+**Location**: `auth-service/src/routes/auth.js:93-95`
 
 **Description**: Login endpoint uses string concatenation to build SQL queries, allowing SQL injection attacks.
 
@@ -914,7 +914,7 @@ log.Printf("SECURITY: Refund initiated - PaymentID: %s, Amount: %.2f, User: %s, 
 **OWASP Category**: A03:2021 – Injection  
 **CWE**: CWE-94 (Improper Control of Generation of Code)  
 **Severity**: Critical  
-**Location**: `notification-service/src/routes/notifications.py:68-92`
+**Location**: `notification-service/src/routes/notifications.py:96-125`
 
 **Description**: Jinja2 templates created from user input allow code execution.
 
@@ -945,7 +945,7 @@ template = env.from_string(template_string)
 **OWASP Category**: A03:2021 – Injection  
 **CWE**: CWE-78 (OS Command Injection)  
 **Severity**: Critical  
-**Location**: `notification-service/src/routes/notifications.py:33-35`
+**Location**: `notification-service/src/routes/notifications.py:40-43`
 
 **Description**: User input passed directly to shell command.
 

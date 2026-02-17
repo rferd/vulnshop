@@ -223,7 +223,7 @@ VulnShop includes vulnerabilities from:
 - SANS Top 25
 
 See `VULNERABILITIES.md` for complete details on:
-- ✅ 50+ intentional vulnerabilities
+- ✅ 45+ intentional vulnerabilities
 - 📍 Exact code locations
 - 🎯 Exploitation techniques
 - 🔧 Remediation guidance
