@@ -21,7 +21,7 @@ if ! command -v docker &> /dev/null; then
 fi
 
 # Check if Docker Compose is installed
-if ! command -v docker-compose &> /dev/null && ! docker compose version &> /dev/null; then
+if ! docker compose version &> /dev/null; then
     echo "❌ Docker Compose is not installed. Please install Docker Compose first."
     exit 1
 fi
@@ -40,7 +40,7 @@ echo "🏗️  Building and starting VulnShop services..."
 echo ""
 
 # Build and start services
-docker-compose up --build -d
+docker compose up --build -d
 
 echo ""
 echo "⏳ Waiting for services to become healthy..."
@@ -53,13 +53,13 @@ INTERVAL=5
 
 while [ $ELAPSED -lt $MAX_WAIT ]; do
     # Check if all services are healthy
-    HEALTHY=$(docker-compose ps | grep -c "healthy" || true)
-    TOTAL=$(docker-compose ps --services | wc -l)
+    HEALTHY=$(docker compose ps | grep -c "healthy" || true)
+    TOTAL=$(docker compose ps --services | wc -l)
     
     echo "   Services healthy: $HEALTHY"
     
     # Check if postgres is healthy (key dependency)
-    if docker-compose ps postgres | grep -q "healthy"; then
+    if docker compose ps postgres | grep -q "healthy"; then
         echo "✅ Core services are ready!"
         break
     fi
@@ -74,7 +74,7 @@ echo "  VulnShop is now running!"
 echo "======================================"
 echo ""
 echo "📊 Service Status:"
-docker-compose ps
+docker compose ps
 echo ""
 echo "🌐 Access Points:"
 echo "   Frontend:        http://localhost:3000"

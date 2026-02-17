@@ -102,7 +102,7 @@ VulnShop consists of 8 microservices orchestrated with Docker Compose:
    Or manually with Docker Compose:
    ```bash
    cp .env.example .env
-   docker-compose up --build -d
+   docker compose up --build -d
    ```
 
 3. **Wait for all services to start** (approximately 2-3 minutes)
@@ -212,7 +212,7 @@ To stop and remove all services:
 
 Or manually:
 ```bash
-docker-compose down -v
+docker compose down -v
 ```
 
 ## 🔍 Vulnerability Categories

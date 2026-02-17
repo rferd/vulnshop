@@ -11,17 +11,17 @@ echo "======================================"
 echo ""
 
 # Check if Docker Compose is installed
-if ! command -v docker-compose &> /dev/null && ! docker compose version &> /dev/null; then
+if ! docker compose version &> /dev/null; then
     echo "❌ Docker Compose is not installed."
     exit 1
 fi
 
 echo "🛑 Stopping all VulnShop services..."
-docker-compose down
+docker compose down
 
 echo ""
 echo "🗑️  Removing volumes..."
-docker-compose down -v
+docker compose down -v
 
 echo ""
 echo "🧹 Cleaning up dangling images..."
